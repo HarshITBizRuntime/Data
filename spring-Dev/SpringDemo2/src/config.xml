@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 	xsi:schemaLocation="http://www.springframework.org/schema/beans
+				http://www.springframework.org/schema/beans/spring-beans.xsd">
+ 	<!-- <bean id="p1" class="com.lara.Person" >
+ 		<property name="fname" value="harshad"/>
+ 	</bean>
+ 	 <bean id="p2" class="com.lara.Person" >
+ 		<constructor-arg name="fname" value="harshad"/>
+ 	</bean>
+ 	<bean id="p3" class="com.lara.Person" >
+ 		<property name="fname" value="harsh1"/>
+ 		<constructor-arg name="fname" value="harsh2"/>
+ 	</bean>
+	<bean id="p4" class="com.lara.Person" scope="singleton">
+ 		<constructor-arg name="fname" value="harsh2"/>
+ 	</bean>
+ 	 -->
+ 	<!--
+ 	<bean id="st1" class="com.lara.Student">
+ 		<property name="fname" value="harsh2"/>
+ 		<property name="lname" value="lara"/>
+ 	</bean>
+	 <bean id="emp1" class="com.lara.Employee" init-method="init" destroy-method="myDestroy">
+		<property name="fname" value="harshad"/>
+		<property name="lname" value="lara"/>
+	</bean>
+	<bean id="a1" class="com.lara.Author">
+		<property name="firstName" value="abc"/>
+		<property name="lastName" value="xyz"/>
+		<property name="address">
+			<bean class="com.lara.Address">
+				<property name="houseNo" value="123/B"/>
+				<property name="streetName" value="BTM"/>
+			</bean>
+		</property>
+	</bean>
+	 	 -->
+ 	       <bean id="emp1" class="com.lara.Employee"
+              init-method="init"
+              destroy-method="myDestroy">
+        	<property name="fname" value="abc"/>
+        	<property name="lname" value="xyz"/>	
+        </bean>
+       <bean id="b1" class="com.lara.Book">
+        	<property name="title" value="Java made easy"/>
+        	<property name="author" value="Vijay"/>
+        	<property name="price" value="500.0"/>
+        </bean>
+ 	   <bean id="b2" class="com.lara.Book" abstract="true">
+        	<property name="title" value="Java made easy"/>
+        	<property name="author" value="Vijay"/>
+        	<property name="price" value="500.0"/>
+        </bean>
+	 	 <bean id="b3" class="com.lara.Book" parent="b2">
+        	<property name="price" value="600.0"/>
+        </bean>
+              <bean id="b4" class="com.lara.Book" parent="b1">
+        	<property name="author" value="Murali"/>  <!-- this is known as spring inheritance. means inherit one bean definiton
+        	                                           into another bean definition. andwhichever proper 11:20 -->
+        </bean>
+	 
+        
+</beans>

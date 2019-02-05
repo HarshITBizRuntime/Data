@@ -1,0 +1,32 @@
+package com.lara.dao;
+
+import java.sql.ResultSet;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import com.lara.entity.Education;
+
+public class EducationDAO 
+{
+	private JdbcTemplate template;
+	
+	@Autowired
+	public void setTemplate(JdbcTemplate template) {
+		this.template = template;
+	}
+	  public List<Education> allEducations()
+	  {
+		  String sql="SELECT ID,subject FROM EducationSpringMVC2";
+		  List<Education> educations=template.query(sql, (ResultSet rs,int row)->
+		  {
+			  Education education=new Education();
+			  education.setId(rs.getInt("ID"));
+			  education.setSubject(rs.getString("subject"));
+			  return education;
+		  });
+		  
+		  return educations;
+	  }
+}

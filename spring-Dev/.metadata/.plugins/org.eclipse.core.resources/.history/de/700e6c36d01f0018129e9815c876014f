@@ -1,0 +1,20 @@
+package com.lara.services;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import com.lara.dao.EducationDAO;
+import com.lara.entity.Education;
+public class EducationService
+{
+	private EducationDAO educationDao;
+	@Autowired
+	public void setEducationDAO(EducationDAO educationDao) 
+	{
+		this.EducationDAO = EducationDAO;
+	}
+	
+	public List<Education> allEducations()
+	{
+		return EducationDAO .allEducations();
+	}
+
+}

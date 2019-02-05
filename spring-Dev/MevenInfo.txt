@@ -1,0 +1,57 @@
+Sunday, January 14, 2018
+step 1 
+first we need to create maven project 
+step 2
+after That straightway right clicked on new created project click maven and Download JavaDoc
+	finished this .. then inside project automaticallly crated many file along with porm.xml files
+step 3
+after That we need to set Targate Runtime
+	go to project property click targate runtime 
+		check apache V8.0 tomcate check box and click finied
+step 4
+in spring deal with maven we need to set maven depandecies in side porm.xml
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-context</artifactId>
+    <version>5.0.2.RELEASE</version>
+</dependency>
+step 5
+then create one configuration file config.xml == > https://docs.spring.io/spring/docs/5.0.3.BUILD-SNAPSHOT/spring-framework-reference/data-access.html#spring-data-tier
+
+go above this search <beans second occurrence 
+
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:jee="http://www.springframework.org/schema/jee"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/jee
+        http://www.springframework.org/schema/jee/spring-jee.xsd">
+
+ //    <bean id="txManager" class="org.springframework.transaction.jta.JtaTransactionManager" />
+</beans>
+step 6 
+	create one bean class i.e Perrson
+
+public class Person 
+{
+	private String firstname;
+	private String lastname;
+	Develop setters and Getters
+	and configur bean class in config.xml file
+		<bean id = "p1" class="com.lara.Person">
+			<property name ="fname" value="harshit"></property>
+			<property name ="lname" value="lara"></property>
+		</bean>
+	and develop one servlet// before this we need to set Build path commans login and Spring frameworks
+			
+		PrintWriter out = response.getWriter();
+		ApplicationContext context = new ClassPathXmlApplicationContext("config.xml");
+		Person p1= (Person)context.getBean("p1");
+		out.println(p1.getFirstname());
+		out.println(p1.getLastname());
+} 
+	after that we can get sucuss full output
+

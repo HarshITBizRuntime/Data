@@ -1,0 +1,163 @@
+Advantages of Hibernate over JDBC
+1. does not depend upon database
+2. no need to write sql commands
+3. no need to establish database connection
+etc..
+
+ORM : object relational mapping
+Object directly related to database table
+means class is mapped to table
+	objects to rows
+	and attributes to coln
+--------------------------------------------
+
+SPRING :
+can be used in any java based project we can use spring, also web appln, enterprise based, micro web development, mobile based appl etc
+IOC : It is the base module : Invertion of Control
+All modules work independently.
+
+To download the Spring distribution
+> Go to https://repo.spring.io/release/org/
+> click on Spring framework
+> spring
+> 4.3.9 RELEASE
+> click first link
+
+it internally uses commons logging
+to download this :
+> Go to https://commons.apache.org/
+> click on releases on the left side
+> logging
+> download
+> Under Binaries click commons-logging-1.2-bin
+
+in spring-framework-4.2.0.RELEASE folder
+ libs >  has all the jar files required for Spring framework
+ docs > api > documentation for the framework all classes etc
+		spring-framework-reference > htmlsingle > index > has the reference manual
+which explain each and every topic of spring 
+schema > has xml schemas
+---------------------------------------------------------------------------------------------------
+
+create ordinary core java project > 
+to enable the spring features 
+1. copy all the jar files from Spring bundle in libs folder, and from logging folder
+2. Every framework ust have a configuration file > create a cfg file in src
+	for this > in src create a file named beans.xml file
+	from F:\spring\spring-framework-4.2.0.RELEASE-dist\spring-framework-4.2.0.RELEASE\docs\spring-framework-reference\htmlsingle
+	open index and search "<beans"
+	copy the sample configuration in our xml file
+
+Now,
+	> create one bean class > Person.java having only one attribute
+	> configure in the xml file > we are providing the value of firstName there itself
+
+
+-----------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
+dt : 17-dec
+> create another project folder spring_app2
+> create config.xml
+> create Person class with 3 attributes
+> define it in config.xml file with id as "p1"
+
+> create one client program M1, and try to retrieve te data using the id "p1"
+we can add multiple definations for the same person class in the xml file
+just give different id name
+and giving values to all the attributes is not necessary
+
+
+-----------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------
+
+23-dec
+
+generate two classes Student and Address with setters and getters
+we used every type of fields in Student class
+it also has one "has-a" relation of Address class
+if we provide any such derived data type, then we have to provide bean tag explicitly 
+and refer it to the address property
+
+"a1" bean is configured in address property of Student class
+
+
+
+we configured the values in xml file
+that data is inserted into the student object by calling he setter methods of student class
+framework is using the setter methods to inject the data : this is known as setter injection
+three types of injection : 
+--------------------------
+1. Setter injection		: we use property tag for setter injection
+2. Constructor injection
+3. Interface injection
+
+Spring supports first two only, it does not support Interface injection.
+
+
+------------------------
+constructor injection : 
+create customers
+we created one constructor
+and in xml file instead of property tag we used <constructor-args>
+now in the bean class "Customer" create only getter methods
+as we are using constructor to set the data here
+
+
+-------------------
+
+explicit wiring :
+-----------------
+create class Author
+in xml file "ath1" :
+explicitly a1 wiring to address attribute of Author class
+
+ath2: removed address tag, we get null pointer exp
+
+ath3 : auto-wiring, we did not set the address property
+we will get the o/p : 
+framework will be setting address property
+remaining Thoery in M15.java
+
+-------------------------
+create Manager
+explicit wiring every argument of the constructor
+	: used "add" in the const argument, and also in <constructor-arg name - "add" ref -"a1"/>
+
+
+
+1/14/2018
+
+https://docs.spring.io/spring/docs/5.0.3.BUILD-SNAPSHOT/spring-framework-reference/data-access.html#spring-data-tier
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:jee="http://www.springframework.org/schema/jee"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/jee
+        http://www.springframework.org/schema/jee/spring-jee.xsd">
+
+    <bean id="txManager" class="org.springframework.transaction.jta.JtaTransactionManager" />
+</beans>
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-context</artifactId>
+    <version>5.0.2.RELEASE</version>
+</dependency>
+https://mvnrepository.com/artifact/org.springframework/spring-jdbc/4.1.4.RELEASE
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-jdbc</artifactId>
+    <version>5.02.RELEASE</version>
+</dependency>
+
+https://maven.apache.org/guides/mini/guide-3rd-party-jars-local.html
+mvn install:install-file -Dfile=<path-to-file> -DgroupId=<group-id> -DartifactId=<artifact-id> -Dversion=<version> -Dpackaging=<packaging>
+
+<dependency>
+    <groupId>com.oracle</groupId>
+    <artifactId>odbc5</artifactId>
+    <version>11.0.1</version>
+</dependency>
+

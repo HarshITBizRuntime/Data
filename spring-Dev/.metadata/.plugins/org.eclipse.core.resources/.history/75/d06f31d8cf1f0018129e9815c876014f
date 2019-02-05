@@ -1,0 +1,16 @@
+package com.lara.services;
+import org.springframework.beans.factory.annotation.Autowired;
+import com.lara.dao.PersonDAO;
+import com.lara.entity.Person;
+public class PersonService 
+{
+	private PersonDAO personDao;
+	@Autowired
+	 public void setPersonDAO(PersonDAO PersonDAO) {
+		this.PersonDAO = PersonDAO;
+	}
+	public void save(Person p1)
+	{
+		PersonDAO.save(p1);
+	}
+}

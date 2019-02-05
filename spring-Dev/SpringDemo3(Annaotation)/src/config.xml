@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:annotation-config/> 
+<!-- 
+		<bean id="p1" class="com.lara.Person"> 
+			<property name="fname" value="harshad"/>
+			<property name="lname" value="Lara"/>
+		</bean> 
+		
+		<bean id="p2" class="com.lara.Person">
+			<property name="fname" value="harsh"/>
+		</bean>
+ -->
+<!-- 
+		<bean id="e1" class="com.lara.Employee">
+			<constructor-arg name="fname" value="abc"/>
+			<constructor-arg name="lname" value="xyz"/>
+		</bean>
+		<bean id="s1" class="com.lara.Student">
+			<property name="fname" value="abc"/>
+			<property name="lname" value="xyz"/>
+		</bean>
+		<bean id="a1" class="com.lara.Address">
+			<property name="hno" value="123/abc"/>
+			<property name="sname" value="BTM"/>
+		</bean>
+ 		<bean id="a2" class="com.lara.Address"> 
+			<property name="hno" value="123/abcd"/> 
+			<property name="sname" value="BTM"/>
+		</bean> 
+		-->
+		
+		<bean id="c1" class="com.lara.Customer">
+			<property name="fname" value="abc"/>
+			<property name="lname" value="xyz"/>
+		</bean>
+		
+</beans>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="p1" class="com.lara.Person" scope = "singleton">
+		<property name="fname" value="harsh"/>
+		<property name="age" value="22"/>
+		<property name="weigth" value="71.73"/>
+	</bean>
+	<bean id="p2" class="com.lara.Person" >
+		<property name="fname" value="harshad"/>
+		<property name="age" value="25"/>
+		<property name="weigth" value="73.73"/>
+	</bean>
+	<bean id="p3" class="com.lara.Person" >
+	</bean>
+	<bean id="p4" class="com.lara.Person" >
+	</bean>
+	<bean id="p5" class="com.lara.Person" />
+	<bean id="e1" class="com.lara.Employee">
+			<property name="fname" value="harsh"/>
+			<property name="age" value="22"/>
+	</bean>
+	<bean id="e2" class="com.lara.Employee">
+			<property name="age" value="22"/>
+			<property name="fname" value="harsh"/>
+	</bean>
+	<bean id="e3" class="com.lara.Employee">
+			<property name="age" value="22"/>
+	</bean>
+	<bean id="e4" class="com.lara.Employee"/>
+	
+	<bean id="st1" class="com.lara.Student" >
+		<property name="fname" value="harsh"/>
+		<property name="age" value="22"/>
+		<property name="weight" value="71.73"/>
+		<property name="marks">
+			<list>
+				<value>99</value>
+				<value>199</value>
+				<value>919</value>
+			</list>
+		</property>
+		<property name="projects">
+			<list>
+				<value>CTIE Bank Project</value>
+				<value>Library management</value>
+				<value>Flipcart</value>
+			</list>
+		</property>
+		<property name="mno">
+			<list>
+				<value>971234567</value>
+				<value>098765432</value>
+				<value>345609876</value>
+			</list>
+		</property>
+		<property name="emailids">
+			<set>
+				<value>lara@technology.com</value>
+				<value>khaja@topper.in</value>
+			</set>
+		</property>
+		<property name="edu">
+			<map>
+				<entry key="degree" value="BE"></entry>
+				<entry key="degree" value="ME"></entry>
+			</map>
+		</property>
+		<property name="skill">
+			<props>
+				<prop key="basic"> C  and C++ </prop>
+				<prop key="addvance"> java and J2EE</prop>
+			</props>
+		</property>
+		<property name="address" ref="a"/>
+		</bean>
+		<bean id="a" class="com.lara.Address">
+			<property name="hno" value="10thB"/>
+			<property name="stname" value="BTM"/>
+		</bean>
+		
+		<bean id="ct1" class="com.lara.Customer" >
+		<constructor-arg name="fname" value="harsh"/>
+		<constructor-arg name="age" value="22"/>
+		<constructor-arg name="weight" value="71.73"/>
+		<constructor-arg name="marks">
+			<list>
+				<value>99</value>
+				<value>199</value>
+				<value>919</value>
+			</list>
+		</constructor-arg>
+		<constructor-arg name="projects">
+			<list>
+				<value>CTIE Bank Project</value>
+				<value>Library management</value>
+				<value>Flipcart</value>
+			</list>
+		</constructor-arg>
+		<constructor-arg name="mno">
+			<list>
+				<value>971234567</value>
+				<value>098765432</value>
+				<value>345609876</value>
+			</list>
+		</constructor-arg>
+		<constructor-arg name="emailids">
+			<set>
+				<value>lara@technology.com</value>
+				<value>khaja@topper.in</value>
+			</set>
+		</constructor-arg>
+		<constructor-arg name="edu">
+			<map>
+				<entry key="degree" value="BE"></entry>
+				<entry key="degree" value="ME"></entry>
+			</map>
+		</constructor-arg>
+		<constructor-arg name="skill">
+			<props>
+				<prop key="basic"> C  and C++ </prop>
+				<prop key="addvance"> java and J2EE</prop>
+			</props>
+		</constructor-arg>
+		<constructor-arg name="address" ref="a"/>
+		</bean>
+		<bean id="auth1" class="com.lara.Author">
+			<property name="fname" value="harsh"/>
+			<property name="age" value="22"/>
+			<property name="address" ref="a"/>
+		</bean>
+		<bean id="auth2" class="com.lara.Author">
+			<property name="fname" value="harsh"/>
+			<property name="age" value="22"/>
+		</bean>
+		<bean id="auth3" class="com.lara.Author" autowire="byType">
+			<property name="fname" value="harsh"/>
+			<property name="age" value="22"/>
+		</bean>
+		<bean id="address" class="com.lara.Address" >
+			<property name="hno" value="11thB"/>
+			<property name="stname" value="BLR"/>
+		</bean>
+		<bean id="m1" class="com.lara.Manager">
+			<constructor-arg name="fname" value="harsh"/>
+			<constructor-arg name="age" value="22"/>
+			<constructor-arg name="add" ref="a"/>
+		</bean>
+			<bean id="m2" class="com.lara.Manager">
+			<constructor-arg name="fname" value="harsh"/>
+			<constructor-arg name="age" value="22"/>
+		</bean>
+			<bean id="m3" class="com.lara.Manager" autowire="constructor">
+			<constructor-arg name="fname" value="harsh"/>
+			<constructor-arg name="age" value="22"/>
+		</bean>
+		<bean id="add" class="com.lara.Address" >
+			<property name="hno" value="13thB"/>
+			<property name="stname" value="BLR"/>
+		</bean> 
+	</beans>

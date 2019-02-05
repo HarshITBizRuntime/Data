@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 4 elements to &apos;Spring8MavenDemo1/src/main/java/com.lara&apos;&#x0D;&#x0A;- Original project: &apos;SpringDemo7(DAO2 Foreign)&apos;&#x0D;&#x0A;- Destination element: &apos;Spring8MavenDemo1/src/main/java/com.lara&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     com.lara.Gender.java&#x0D;&#x0A;     com.lara.GenderDAO.java&#x0D;&#x0A;     com.lara.PersonDAO.java&#x0D;&#x0A;     com.lara.M1.java" description="Copy compilation units" destination="=Spring8MavenDemo1/src\/main\/java&lt;com.lara" element1="/src&lt;com.lara{Gender.java" element2="/src&lt;com.lara{GenderDAO.java" element3="/src&lt;com.lara{PersonDAO.java" element4="/src&lt;com.lara{M1.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1516237523974" units="4" version="1.0"/>
+</session>

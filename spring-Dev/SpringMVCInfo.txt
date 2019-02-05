@@ -1,0 +1,115 @@
+Create new Maven Project
+
+paste Dependency in pom.xml
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-core</artifactId>
+    <version>5.0.2.RELEASE</version>
+</dependency>
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-context</artifactId>
+    <version>5.0.2.RELEASE</version>
+</dependency>
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-jdbc</artifactId>
+    <version>5.0.2.RELEASE</version>
+</dependency>
+<dependency>
+    <groupId>com.oracle</groupId>
+    <artifactId>odbc5</artifactId>
+    <version>11.1.0</version>
+</dependency>
+adding new Dependency spring-webmvc
+<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-webmvc</artifactId>
+    <version>5.0.2.RELEASE</version>
+</dependency>
+
+Configure Tomcate Runtime Environment
+	set targate Runtime
+	right click project go to property serch targate Runtime apply ,apply and close
+
+Configure Build Path
+	Bydefault source java folder is missing then we have to create new project inside main folder create new Java folder same as privious proejct
+
+<servlet>
+	<servlet-name>config</servlet-name> // it is identifire 
+	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+	<load-on-startup>1</load-on-startup>
+</servlet>
+<servlet-mapping>
+	<servlet-name>config</servlet-name>
+	<url-pattern>/</url-pattern>
+</servlet-mapping>
+
+every request is go to the DispatcherServlet
+in the config file we have to passing 
+Annotation is more power full then config.xml  file
+
+here many two namespaces are rqueired 
+context namespaces
+MVC namespaces
+now we go with config-servlet.xml file create inside webINF
+
+open
+file:///F:/software/%C2%A0/Setup/java/spring-framework-4.2.0.RELEASE-dist/spring-framework-4.2.0.RELEASE/docs/spring-framework-reference/htmlsingle/index.html
+
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <context:annotation-config/>
+
+</beans>
+
+
+there are two aprocheress to read the data
+servlet
+bean Object
+
+spring is supporting handeling multiple 
+<!-- xmlns:mvc we have to paste that before xsi:schemaLocation -->
+
+anonoms class willl be develop and pass if you want any package name
+ <context:annotation-config/>
+    <context:component-scan base-package="com.lara"/>
+    <mvc:annotation-driven/>
+
+    create one new test1.jsp inseide webapps
+
+    <a href="hello1">Test SetUp</a>
+
+    then create one Conteroller.java class inside src/main/java
+
+    create one new sucess1.jsp inseide webapps
+
+ 1/28/2018
+ service () internally calling doGet()
+ jsp not advisable to make in public dirctory
+	
+
+<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+<dependency>
+    <groupId>commons-io</groupId>
+    <artifactId>commons-io</artifactId>
+    <version>2.6</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
+<dependency>
+    <groupId>commons-fileupload</groupId>
+    <artifactId>commons-fileupload</artifactId>
+    <version>1.3.3</version>
+</dependency>

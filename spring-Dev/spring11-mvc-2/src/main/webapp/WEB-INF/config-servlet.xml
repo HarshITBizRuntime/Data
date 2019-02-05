@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        ">
+	<context:annotation-config />
+	<context:component-scan base-package="com.mvc2" />
+	<mvc:annotation-driven />
+
+	<!-- to keep jsp files in specific location -->
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/pages/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<!-- dynamic names for input fields (if we want to give support for different 
+		languages) -->
+	<!-- using properties file[key,value] -->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basename" value="application" />
+	</bean>
+
+	<!-- to file upload -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="100000" />
+	</bean>
+
+	<!-- to intract with database -->
+	<bean id="dmds"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="username" value="root" />
+		<property name="password" value="kattamak" />
+		<property name="url" value="jdbc:mysql://localhost:3306/linuxdb" />
+	</bean>
+
+	<bean id="template" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dmds" />
+	</bean>
+	
+	<bean id = "genderDao" class="com.mvc2.dao.GenderDAO" />
+	<bean id = "genderService" class="com.mvc2.service.GenderService" />
+	
+	<bean id = "skillDao" class="com.mvc2.dao.SkillDAO" />
+	<bean id = "skillService" class="com.mvc2.service.SkillService" />
+	
+</beans> 

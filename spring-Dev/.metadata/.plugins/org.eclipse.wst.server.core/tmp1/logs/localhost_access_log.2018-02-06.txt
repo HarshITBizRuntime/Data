@@ -1,0 +1,4 @@
+127.0.0.1 - - [06/Feb/2018:14:40:59 -0800] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [06/Feb/2018:14:41:01 -0800] "GET /SpringTest/WEB-INF/classes/com/lara/M1.java HTTP/1.1" 404 992
+0:0:0:0:0:0:0:1 - - [06/Feb/2018:14:41:31 -0800] "GET /SpringTest/WEB-INF/classes/com/lara/M1.java HTTP/1.1" 404 992
+0:0:0:0:0:0:0:1 - - [06/Feb/2018:14:43:10 -0800] "GET /SpringTest/WEB-INF/classes/com/lara/M1.java HTTP/1.1" 404 992

@@ -1,0 +1,24 @@
+<form action="Addperson2" method="post">
+                <table border="0">
+                    <tr>
+                        <th colspan="2">Login Form</th>
+                    </tr>
+                    <tr>
+                        <td>UserName:</td>
+                        <td><input type="text" name="uname" maxlength="15" required></td>
+                    </tr>
+                    <tr>
+                        <td>Password:</td>
+                        <td><input type ="password" name="pwd" maxlength="15" required></td>
+                    </tr>
+					<tr>
+						<td>
+							<label><input type="checkbox">Remember me</label>
+						</td>
+					</tr> 
+                    <tr>
+                        <td><input type = submit value ="Login"></td>
+                        <td><input type = reset value="Forgot"></td>
+                    </tr>
+                </TABLE>
+            </FORM>

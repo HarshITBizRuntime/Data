@@ -1,0 +1,9 @@
+create table gender(id int unique, name varchar(90));
+insert into gender values(1,'MALE');
+insert into gender values(2,'FEMALE');
+
+create table skill(id int unique, name varchar(90));
+insert into skill values(1,'C');
+insert into skill values(2,'C++');
+insert into skill values(3,'JAVA');
+insert into skill values(4,'ORACLE');
